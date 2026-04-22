@@ -58,14 +58,25 @@ header.scrolled .logo img{height:44px}
 .logo .brand-text{display:flex;flex-direction:column;line-height:1.2}
 .logo .brand-text small{
   font-family:"Noto Serif JP",serif;
-  font-size:12px;letter-spacing:.4em;
-  color:var(--gold-soft);font-weight:300;
+  font-size:13px;letter-spacing:.22em;
+  color:var(--gold-soft);font-weight:300;white-space:nowrap;
   padding-left:14px;border-left:1px solid rgba(201,168,112,.3);
   padding-top:4px;padding-bottom:4px;
 }
+.brand-ig{
+  display:flex;align-items:center;justify-content:center;
+  width:36px;height:36px;flex-shrink:0;
+  margin-left:18px;margin-right:auto;
+  border:1px solid var(--gold);border-radius:50%;
+  color:var(--gold-soft);
+  transition:all .3s;
+}
+.brand-ig:hover{background:var(--gold);color:#000;opacity:1}
+.brand-ig svg{width:15px;height:15px;fill:currentColor}
+header.scrolled .brand-ig{color:var(--gold)}
 footer .logo{justify-content:center}
 footer .logo img{height:88px}
-footer .logo .brand-text small{font-size:13px;padding-left:18px;padding-top:6px;padding-bottom:6px}
+footer .logo .brand-text small{font-size:14px;padding-left:18px;padding-top:6px;padding-bottom:6px;white-space:normal}
 nav ul{list-style:none;display:flex;gap:36px}
 nav a{
   font-family:"Cormorant Garamond",serif;
