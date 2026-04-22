@@ -46,16 +46,25 @@ header.scrolled{
 }
 header.on-dark{color:#fff}
 .logo{
-  font-family:"Cinzel", serif;
-  font-size:20px;letter-spacing:.35em;
-  font-weight:500;
+  display:flex;align-items:center;gap:14px;
+  text-decoration:none;line-height:1;
 }
-.logo small{
-  display:block;
+.logo img{
+  height:56px;width:auto;display:block;
+  transition:height .4s;
+}
+header.scrolled .logo img{height:44px}
+.logo .brand-text{display:flex;flex-direction:column;line-height:1.2}
+.logo .brand-text small{
   font-family:"Noto Serif JP",serif;
-  font-size:9px;letter-spacing:.4em;
-  margin-top:4px;opacity:.7;font-weight:300;
+  font-size:10px;letter-spacing:.4em;
+  color:var(--gold-soft);font-weight:300;
+  padding-left:14px;border-left:1px solid rgba(201,168,112,.3);
+  padding-top:4px;padding-bottom:4px;
 }
+footer .logo{justify-content:center}
+footer .logo img{height:88px}
+footer .logo .brand-text small{font-size:11px;padding-left:18px;padding-top:6px;padding-bottom:6px}
 nav ul{list-style:none;display:flex;gap:36px}
 nav a{
   font-family:"Cormorant Garamond",serif;
@@ -663,6 +672,18 @@ footer .footer-nav a{
   font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:#aaa;
 }
 footer p{margin-top:20px;font-size:11px;letter-spacing:.3em;color:#666}
+footer .social{
+  display:flex;justify-content:center;gap:22px;margin:10px 0 6px;
+}
+footer .social a{
+  width:40px;height:40px;border:1px solid #333;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--gold-soft);font-size:14px;letter-spacing:.1em;
+  font-family:"Cormorant Garamond",serif;
+  transition:all .4s;
+}
+footer .social a:hover{border-color:var(--gold);color:var(--gold);opacity:1}
+footer .social svg{width:18px;height:18px;fill:currentColor}
 
 /* ===== Reveal Animations ===== */
 .reveal{opacity:0;transform:translateY(40px);transition:opacity 1.2s ease, transform 1.2s ease}
@@ -694,6 +715,9 @@ footer p{margin-top:20px;font-size:11px;letter-spacing:.3em;color:#666}
   .flow-item{grid-template-columns:1fr;gap:12px;text-align:left}
   .flow-num{font-size:32px}
   .hero h1{letter-spacing:.15em}
+  .logo img{height:42px}
+  header.scrolled .logo img{height:36px}
+  .logo .brand-text small{font-size:9px;padding-left:10px}
   .price-box{padding:56px 28px}
   .values-grid{grid-template-columns:1fr}
   .course,.course.reverse{grid-template-columns:1fr;gap:40px}
