@@ -66,17 +66,18 @@ header.scrolled .logo img{height:44px}
   padding-left:14px;border-left:1px solid rgba(201,168,112,.3);
   padding-top:4px;padding-bottom:4px;
 }
-.brand-ig{
+.brand-ig,.brand-line{
   display:flex;align-items:center;justify-content:center;
   width:36px;height:36px;flex-shrink:0;
-  margin-left:18px;margin-right:auto;
   border:1px solid var(--gold);border-radius:50%;
   color:var(--gold-soft);
   transition:all .3s;
 }
-.brand-ig:hover{background:var(--gold);color:#000;opacity:1}
-.brand-ig svg{width:15px;height:15px;fill:currentColor}
-header.scrolled .brand-ig{color:var(--gold)}
+.brand-ig{margin-left:18px}
+.brand-line{margin-left:10px;margin-right:auto}
+.brand-ig:hover,.brand-line:hover{background:var(--gold);color:#000;opacity:1}
+.brand-ig svg,.brand-line svg{width:15px;height:15px;fill:currentColor}
+header.scrolled .brand-ig,header.scrolled .brand-line{color:var(--gold)}
 footer .logo{justify-content:center}
 footer .logo img{height:88px}
 footer .logo .brand-text small{font-size:14px;padding-left:18px;padding-top:6px;padding-bottom:6px;white-space:normal}
@@ -758,8 +759,10 @@ section{padding:140px 48px;position:relative}
 /* Contact page methods */
 .contact-methods{background:var(--bg-alt)}
 .methods-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:40px;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:28px;
 }
+@media (max-width:1000px){.methods-grid{grid-template-columns:repeat(2,1fr);gap:20px}}
+@media (max-width:520px){.methods-grid{grid-template-columns:1fr}}
 .method{
   text-align:center;padding:60px 30px;
   border:1px solid var(--line);background:var(--bg);
