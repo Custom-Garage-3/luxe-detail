@@ -575,12 +575,16 @@ section{padding:100px 48px;position:relative}
 }
 .price-preview-item .amount{
   font-family:"Cormorant Garamond",serif;
-  font-size:44px;letter-spacing:.02em;margin-bottom:12px;font-weight:300;
-  color:var(--ink);line-height:1;
+  font-size:52px;letter-spacing:.01em;margin-bottom:12px;font-weight:300;
+  color:var(--ink);line-height:1;display:flex;align-items:flex-start;justify-content:center;gap:2px;
 }
 .price-preview-item.signature .amount{color:var(--gold-soft)}
-.price-preview-item .amount small{
-  font-size:18px;color:var(--ink-soft);margin-left:8px;font-weight:300;
+.price-preview-item .amount .currency{
+  font-size:18px;font-weight:300;margin-top:8px;
+  color:var(--ink-soft);letter-spacing:0;
+}
+.price-preview-item .amount .tilde{
+  font-size:20px;color:var(--gold-soft);margin-top:28px;margin-left:4px;font-weight:300;
 }
 .price-preview-item .desc{
   font-size:15px;color:var(--ink-soft);letter-spacing:.05em;line-height:2;
