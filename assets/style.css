@@ -574,17 +574,13 @@ section{padding:100px 48px;position:relative}
   color:var(--gold);margin-bottom:22px;
 }
 .price-preview-item .amount{
-  font-family:"Cormorant Garamond",serif;
-  font-size:52px;letter-spacing:.01em;margin-bottom:12px;font-weight:300;
-  color:var(--ink);line-height:1;display:flex;align-items:flex-start;justify-content:center;gap:2px;
+  font-family:"Noto Serif JP",serif;
+  font-size:40px;letter-spacing:.05em;margin-bottom:12px;font-weight:300;
+  color:var(--ink);line-height:1;
 }
 .price-preview-item.signature .amount{color:var(--gold-soft)}
-.price-preview-item .amount .currency{
-  font-size:18px;font-weight:300;margin-top:8px;
-  color:var(--ink-soft);letter-spacing:0;
-}
-.price-preview-item .amount .tilde{
-  font-size:20px;color:var(--gold-soft);margin-top:28px;margin-left:4px;font-weight:300;
+.price-preview-item .amount small{
+  font-size:20px;color:var(--gold-soft);margin-left:4px;font-weight:300;
 }
 .price-preview-item .desc{
   font-size:15px;color:var(--ink-soft);letter-spacing:.05em;line-height:2;
