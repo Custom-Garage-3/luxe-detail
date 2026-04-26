@@ -173,6 +173,49 @@ header.scrolled nav li.nav-social a{border-color:var(--gold);color:var(--gold)}
 }
 .hero-btn-line:hover{background:#06c755;border-color:#06c755;color:#fff}
 
+.hero-note{
+  margin-top:18px;
+  font-size:13px;letter-spacing:.2em;
+  color:rgba(255,255,255,.55);
+}
+
+/* ===== Strengths Strip ===== */
+.strengths-strip{
+  display:flex;align-items:stretch;justify-content:center;
+  background:var(--bg-alt);
+  border-bottom:1px solid rgba(201,168,112,.2);
+}
+.strength-item{
+  flex:1;max-width:480px;
+  padding:52px 60px;text-align:center;
+}
+.strength-num{
+  font-family:"Cormorant Garamond",serif;
+  font-size:clamp(52px,6vw,72px);
+  font-weight:400;color:var(--gold-soft);
+  letter-spacing:.04em;line-height:1;
+  margin-bottom:10px;
+}
+.strength-label{
+  font-family:"Cinzel",serif;
+  font-size:12px;letter-spacing:.45em;
+  color:var(--gold);margin-bottom:16px;
+  text-transform:uppercase;
+}
+.strength-desc{
+  font-size:14px;color:var(--ink-muted);
+  letter-spacing:.06em;line-height:1.9;
+}
+.strength-sep{
+  width:1px;background:rgba(201,168,112,.2);
+  margin:40px 0;flex-shrink:0;
+}
+@media (max-width:640px){
+  .strengths-strip{flex-direction:column}
+  .strength-sep{width:auto;height:1px;margin:0 40px}
+  .strength-item{padding:40px 32px}
+}
+
 /* ===== Quick Strip ===== */
 .quick-strip{
   display:flex;align-items:center;justify-content:center;
