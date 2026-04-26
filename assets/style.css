@@ -575,8 +575,8 @@ section{padding:100px 48px;position:relative}
 }
 .price-preview-item .amount{
   font-family:"Cormorant Garamond",serif;
-  font-size:48px;letter-spacing:.03em;margin-bottom:12px;font-weight:400;
-  color:var(--ink);
+  font-size:44px;letter-spacing:.02em;margin-bottom:12px;font-weight:300;
+  color:var(--ink);line-height:1;
 }
 .price-preview-item.signature .amount{color:var(--gold-soft)}
 .price-preview-item .amount small{
