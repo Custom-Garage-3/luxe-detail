@@ -2,7 +2,8 @@
   --bg:#0b0b0b;
   --bg-alt:#141414;
   --ink:#f2ecdf;
-  --ink-soft:#a89f8f;
+  --ink-soft:#c2b8a8;
+  --ink-muted:#a89f90;
   --line:#2a241e;
   --gold:#d4b078;
   --gold-soft:#edd49a;
@@ -14,11 +15,11 @@ html{scroll-behavior:smooth}
 body{
   font-family:"Noto Serif JP", "Yu Mincho", "游明朝", serif;
   font-weight:400;
-  font-size:19px;
+  font-size:17px;
   color:var(--ink);
   background:var(--bg);
-  line-height:1.95;
-  letter-spacing:.03em;
+  line-height:2;
+  letter-spacing:.02em;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   overflow-x:hidden;
@@ -208,7 +209,7 @@ header.scrolled nav li.nav-social a{border-color:var(--gold);color:var(--gold)}
 .breadcrumb .current{color:var(--gold)}
 
 /* ===== Section Base ===== */
-section{padding:140px 48px;position:relative}
+section{padding:100px 48px;position:relative}
 .container{max-width:1180px;margin:0 auto}
 .container-narrow{max-width:860px;margin:0 auto}
 .section-head{text-align:center;margin-bottom:80px}
@@ -246,8 +247,8 @@ section{padding:140px 48px;position:relative}
   line-height:2;margin-bottom:34px;
 }
 .concept-text p{
-  font-size:19px;color:var(--ink-soft);line-height:2.3;
-  margin-bottom:22px;
+  font-size:17px;color:var(--ink-soft);line-height:2.2;
+  margin-bottom:20px;
 }
 .concept-text .sig{
   font-family:"Cormorant Garamond",serif;
@@ -278,13 +279,13 @@ section{padding:140px 48px;position:relative}
   font-size:22px;font-weight:400;letter-spacing:.2em;margin-bottom:16px;
 }
 .value-card p{
-  font-size:18px;color:var(--ink-soft);line-height:2.2;
+  font-size:16px;color:var(--ink-soft);line-height:2.1;
 }
 
 /* ===== Quote ===== */
 .quote-block{
   background:var(--dark);color:#e8e4dc;
-  padding:160px 48px;text-align:center;
+  padding:120px 48px;text-align:center;
 }
 .quote-block .mark{
   font-family:"Cormorant Garamond",serif;
@@ -306,7 +307,7 @@ section{padding:140px 48px;position:relative}
 /* ===== Service ===== */
 .service{
   background:var(--dark);color:#e8e4dc;
-  padding:160px 48px;
+  padding:120px 48px;
 }
 .service .section-head h2{color:#fff}
 .service .section-head .en-caps{color:var(--gold-soft)}
@@ -336,7 +337,7 @@ section{padding:140px 48px;position:relative}
   color:var(--gold-soft);margin-bottom:34px;
 }
 .service-card p{
-  font-size:17px;color:#c9c3b6;line-height:2.2;
+  font-size:15px;color:#c9c3b6;line-height:2.1;
   font-weight:400;
 }
 .service-note{
@@ -500,9 +501,9 @@ section{padding:140px 48px;position:relative}
 .pricing-table th:nth-child(1){width:90px}
 .pricing-table th:nth-child(2){text-align:left;padding-left:24px}
 .pricing-table td{
-  padding:26px 18px;
+  padding:22px 18px;
   border-bottom:1px solid rgba(201,168,112,.18);
-  text-align:center;font-size:17px;color:var(--ink);
+  text-align:center;font-size:16px;color:var(--ink);
 }
 .pricing-table td:nth-child(1){
   font-family:"Cinzel",serif;
@@ -510,7 +511,7 @@ section{padding:140px 48px;position:relative}
 }
 .pricing-table td:nth-child(2){
   text-align:left;padding-left:24px;
-  font-size:14px;color:var(--ink-soft);letter-spacing:.05em;
+  font-size:13px;color:var(--ink-muted);letter-spacing:.03em;
 }
 .pricing-table td.price{
   font-family:"Cormorant Garamond",serif;
@@ -551,12 +552,38 @@ section{padding:140px 48px;position:relative}
 }
 
 .pricing-notes{
-  max-width:1000px;margin:48px auto 0;
+  max-width:1000px;margin:40px auto 0;
   text-align:center;
 }
 .pricing-notes p{
-  font-size:14px;color:var(--ink-soft);letter-spacing:.08em;
-  line-height:2.1;margin:6px 0;
+  font-size:13px;color:var(--ink-muted);letter-spacing:.06em;
+  line-height:2.1;margin:5px 0;
+}
+
+/* ===== Subscription table course styles ===== */
+.pricing-table.sub-table td.course-cell{
+  font-family:"Cinzel",serif;
+  font-size:14px;color:var(--ink);letter-spacing:.2em;
+  font-weight:400;text-align:center;
+}
+.pricing-table.sub-table td.premier-cell{
+  color:var(--gold-soft);
+}
+.th-badge{
+  font-size:11px;color:var(--gold-soft);
+  display:block;margin-top:4px;letter-spacing:.2em;
+}
+.price-main{
+  font-family:"Cormorant Garamond",serif;
+  font-size:24px;letter-spacing:.03em;font-weight:400;
+}
+.price-tilde{
+  font-family:"Cormorant Garamond",serif;
+  font-size:18px;color:var(--gold-soft);margin-left:1px;
+}
+.monthly-note{
+  font-size:12px;color:var(--ink-muted);letter-spacing:.04em;
+  display:inline-block;margin-top:4px;
 }
 
 @media (max-width:720px){
@@ -732,7 +759,7 @@ section{padding:140px 48px;position:relative}
 /* ===== Contact ===== */
 .contact{
   background:var(--dark);color:#e8e4dc;
-  padding:160px 48px;text-align:center;
+  padding:120px 48px;text-align:center;
 }
 .contact .en-caps{color:var(--gold-soft);font-size:14px;margin-bottom:26px;display:block}
 .contact h2{
@@ -882,8 +909,8 @@ footer .social svg{width:18px;height:18px;fill:currentColor}
   nav.open{right:0}
   nav ul{flex-direction:column;gap:28px;text-align:center;color:var(--ink)}
   .menu-toggle{display:block;z-index:101}
-  section{padding:90px 24px}
-  .service,.flow,.contact,.quote-block,.cta-strip{padding:90px 24px}
+  section{padding:72px 24px}
+  .service,.flow,.contact,.quote-block,.cta-strip{padding:72px 24px}
   .breadcrumb{padding:24px 24px 0}
   .concept-grid{grid-template-columns:1fr;gap:60px}
   .service-grid{grid-template-columns:1fr}
