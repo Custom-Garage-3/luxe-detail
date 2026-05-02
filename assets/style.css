@@ -449,6 +449,23 @@ section{padding:100px 48px;position:relative}
   font-size:15px;color:#c9c3b6;line-height:2.1;
   font-weight:400;
 }
+.service-card.featured{
+  background:var(--dark-soft);
+  border:1px solid rgba(212,176,120,.3);
+  position:relative;
+}
+.service-card.featured:hover{background:#1c1a17}
+.popular-badge{
+  display:inline-block;
+  font-family:"Noto Serif JP",serif;
+  font-size:11px;letter-spacing:.25em;
+  color:var(--gold);border:1px solid var(--gold);
+  padding:4px 16px;margin-bottom:18px;
+}
+.price-preview-item.premier{
+  border:1px solid rgba(212,176,120,.3);
+  background:var(--dark-soft);
+}
 .service-note{
   text-align:center;margin-top:64px;
   font-family:"Cormorant Garamond",serif;
