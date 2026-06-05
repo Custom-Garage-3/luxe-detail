@@ -769,8 +769,8 @@ section{padding:100px 48px;position:relative}
     font-size:11px;letter-spacing:.3em;
     color:var(--gold);
   }
-  .pricing-table td.price.premier::before{content:"PREMIER"}
-  .pricing-table td.price.signature::before{content:"SIGNATURE"}
+  .pricing-table td.price.premier::before{content:"PREMIUM"}
+  .pricing-table td.price.signature::before{content:"SPECIAL"}
 }
 
 /* Price factors */
