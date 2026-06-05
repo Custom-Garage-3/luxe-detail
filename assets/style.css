@@ -1054,6 +1054,39 @@ footer .social a{
 footer .social a:hover{border-color:var(--gold);color:var(--gold);opacity:1}
 footer .social svg{width:18px;height:18px;fill:currentColor}
 
+/* ===== Special course options ===== */
+.special-options{
+  display:grid;grid-template-columns:1fr 1fr;gap:16px;
+  margin:24px 0 28px;
+}
+.special-option{
+  background:var(--bg-alt);
+  border:1px solid var(--line);
+  border-radius:4px;
+  padding:22px 20px;
+}
+.special-option-title{
+  font-size:15px;font-weight:600;
+  color:var(--ink);letter-spacing:.06em;
+  margin-bottom:14px;
+}
+.special-option ul{
+  list-style:none;border-top:none;
+}
+.special-option ul li{
+  padding:8px 0;border-bottom:1px solid var(--line);
+  font-size:15px;color:var(--ink-soft);
+  display:flex;align-items:center;gap:12px;
+}
+.special-option ul li::before{
+  content:"";width:12px;height:1px;
+  background:var(--gold);flex-shrink:0;
+}
+.special-option ul li:last-child{border-bottom:none}
+@media(max-width:640px){
+  .special-options{grid-template-columns:1fr}
+}
+
 /* ===== Works ===== */
 .works{background:#fff;padding:100px 48px}
 .works-lead{
