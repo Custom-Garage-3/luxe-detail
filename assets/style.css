@@ -1050,11 +1050,39 @@ footer .social a{
 footer .social a:hover{border-color:var(--gold);color:var(--gold);opacity:1}
 footer .social svg{width:18px;height:18px;fill:currentColor}
 
-/* ===== Hero eyebrow ===== */
-.hero-eyebrow{
-  font-size:14px;letter-spacing:.2em;
-  color:rgba(255,255,255,.75);
-  margin-bottom:20px;
+/* ===== Hero facts bar ===== */
+.hero-facts{
+  display:flex;align-items:center;justify-content:center;
+  gap:0;margin:0 auto 40px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.18);
+  backdrop-filter:blur(8px);
+  max-width:600px;
+  border-radius:4px;
+  overflow:hidden;
+}
+.hero-fact{
+  flex:1;padding:18px 20px;text-align:center;
+  display:flex;flex-direction:column;gap:5px;
+}
+.hero-fact-num{
+  font-family:"Noto Serif JP",serif;
+  font-size:22px;font-weight:300;
+  color:#fff;letter-spacing:.04em;line-height:1;
+}
+.hero-fact-num small{font-size:14px;color:rgba(255,255,255,.7)}
+.hero-fact-label{
+  font-family:"Cinzel",serif;
+  font-size:9px;letter-spacing:.35em;
+  color:var(--gold-soft);text-transform:uppercase;
+}
+.hero-fact-sep{
+  width:1px;height:40px;
+  background:rgba(255,255,255,.18);flex-shrink:0;
+}
+@media(max-width:520px){
+  .hero-facts{flex-direction:column;max-width:240px}
+  .hero-fact-sep{width:80%;height:1px}
 }
 
 /* ===== Strength icons ===== */
