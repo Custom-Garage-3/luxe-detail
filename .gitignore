@@ -1,0 +1,7 @@
+.claude/
+*.pptx
+*.docx
+*.pdf
+*.py
+make_*.js
+node_modules/
