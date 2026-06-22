@@ -1327,3 +1327,123 @@ footer .social svg{width:18px;height:18px;fill:currentColor}
   .form-wrap{padding:48px 28px}
   footer .footer-nav{gap:18px}
 }
+
+/* ===== 企業理念 / Philosophy ===== */
+.philosophy{
+  background:var(--dark);
+  color:#fff;
+  padding:120px 24px;
+  position:relative;
+  overflow:hidden;
+}
+.philosophy::before{
+  content:"";
+  position:absolute;
+  top:-30%;left:50%;
+  width:120%;height:160%;
+  transform:translateX(-50%);
+  background:radial-gradient(ellipse at center,rgba(0,136,255,.18),transparent 60%);
+  pointer-events:none;
+}
+.philosophy .container-narrow{position:relative;z-index:1;text-align:center}
+.philosophy-eyebrow{
+  display:block;
+  color:var(--gold-soft);
+  font-size:12px;
+  letter-spacing:.3em;
+  margin-bottom:32px;
+}
+.philosophy-lead{
+  font-size:clamp(28px,5vw,56px);
+  font-weight:900;
+  line-height:1.5;
+  letter-spacing:.04em;
+  margin-bottom:56px;
+  background:linear-gradient(120deg,#fff 0%,#bfe0ff 60%,var(--gold-soft) 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.philosophy-body{
+  max-width:680px;
+  margin:0 auto;
+  text-align:left;
+}
+.philosophy-body p{
+  font-size:clamp(15px,1.6vw,18px);
+  line-height:2.3;
+  color:rgba(255,255,255,.82);
+  margin-bottom:28px;
+}
+.philosophy-stack{
+  text-align:center;
+  font-weight:700;
+  color:#fff !important;
+  letter-spacing:.12em;
+}
+.philosophy-emph{
+  color:#fff !important;
+  font-weight:700;
+  font-size:clamp(17px,2vw,21px) !important;
+  border-left:3px solid var(--gold);
+  padding:8px 0 8px 24px;
+  line-height:2.1 !important;
+}
+@media(max-width:640px){
+  .philosophy{padding:80px 20px}
+  .philosophy-lead{margin-bottom:40px}
+}
+
+/* ===== 創業ストーリー / Story ===== */
+.story{
+  background:var(--bg-alt);
+  padding:120px 24px;
+  position:relative;
+}
+.story .container-narrow{position:relative;z-index:1;text-align:center}
+.story-eyebrow{
+  display:block;
+  color:var(--gold);
+  font-size:12px;
+  letter-spacing:.3em;
+  margin-bottom:32px;
+}
+.story-lead{
+  font-size:clamp(28px,4.6vw,52px);
+  font-weight:900;
+  line-height:1.5;
+  letter-spacing:.04em;
+  color:var(--ink);
+  margin-bottom:56px;
+}
+.story-body{
+  max-width:680px;
+  margin:0 auto;
+  text-align:left;
+}
+.story-body p{
+  font-size:clamp(15px,1.6vw,18px);
+  line-height:2.3;
+  color:var(--ink-soft);
+  margin-bottom:26px;
+}
+.story-emph{
+  color:var(--ink) !important;
+  font-weight:700;
+  font-size:clamp(17px,2vw,21px) !important;
+  border-left:3px solid var(--gold);
+  padding:8px 0 8px 24px;
+  line-height:2.1 !important;
+}
+.story-quote{
+  text-align:center;
+  font-weight:900;
+  font-size:clamp(20px,2.6vw,28px) !important;
+  color:var(--gold) !important;
+  letter-spacing:.06em;
+  margin:8px 0 !important;
+}
+@media(max-width:640px){
+  .story{padding:80px 20px}
+  .story-lead{margin-bottom:40px}
+}
