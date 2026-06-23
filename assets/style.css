@@ -1447,3 +1447,25 @@ footer .social svg{width:18px;height:18px;fill:currentColor}
   .story{padding:80px 20px}
   .story-lead{margin-bottom:40px}
 }
+
+/* ===== トップページ 企業理念 追加スタイル ===== */
+.philosophy-home{padding:100px 24px}
+.philosophy-home-text{
+  max-width:640px;
+  margin:0 auto 36px;
+  font-size:clamp(15px,1.6vw,18px);
+  line-height:2.4;
+  color:rgba(255,255,255,.85);
+  text-align:center;
+}
+.philosophy-home-link{
+  display:inline-block;
+  color:var(--gold-soft);
+  font-size:14px;
+  letter-spacing:.1em;
+  padding-bottom:4px;
+  border-bottom:1px solid var(--gold);
+}
+@media(max-width:640px){
+  .philosophy-home{padding:64px 20px}
+}
