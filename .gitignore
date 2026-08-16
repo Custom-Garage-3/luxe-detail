@@ -5,3 +5,7 @@
 *.py
 make_*.js
 node_modules/
+
+# ナンバープレートをぼかす前の原本（公開厳禁）
+assets/works_original/
+assets/works_plate_mask.json
