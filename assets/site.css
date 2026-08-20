@@ -220,6 +220,17 @@ body.menu-open .ov{opacity:1;visibility:visible}
 .fude-rule--c{margin-inline:auto}
 
 /* ============================================================
+   CAMPAIGN（公式LINE登録で初回半額）
+   サイト唯一の朱ベタ面。ここだけ強く出して申込へつなげる
+   ============================================================ */
+/* ヒーロー内の小さなクーポン表示 */
+.hero-cpn{display:inline-flex;align-items:center;gap:10px;margin-top:16px;
+  border:1px solid var(--shu);background:rgba(183,40,46,.9);color:#fff;
+  font-size:clamp(11px,1.5vw,13px);font-weight:500;letter-spacing:.08em;
+  padding:9px 16px;line-height:1;opacity:0;animation:fi 1.4s ease 1.35s forwards}
+.hero-cpn b{font-weight:700}
+
+/* ============================================================
    STATEMENT（写真の上に一句）
    ============================================================ */
 .stm{position:relative;padding:clamp(70px,10vw,120px) 0;overflow:hidden;background:var(--ink)}
@@ -344,6 +355,29 @@ table.t td b{font-family:var(--f-en);font-size:16px;font-weight:500;font-variant
 .sec--dark .city-grid{background:var(--line-l);border-color:var(--line-l)}
 .sec--dark .city{background:var(--ink);color:rgba(255,255,255,.78)}
 .sec--dark .city.is-core{background:var(--white);color:var(--ink)}
+
+/* ============================================================
+   COUPON（LINE友だち登録で初回半額）
+   ============================================================ */
+.coupon{border:1px solid var(--shu);position:relative;
+  padding:clamp(30px,4vw,56px) clamp(22px,3vw,48px);
+  display:grid;grid-template-columns:1fr auto;gap:clamp(22px,3vw,44px);align-items:center}
+.coupon::before{content:"";position:absolute;inset:0;background:var(--shu);opacity:.06;pointer-events:none}
+.coupon > *{position:relative}
+.coupon .tag{display:inline-block;font-family:var(--f-jp);font-weight:500;font-size:11.5px;
+  letter-spacing:.2em;color:#fff;background:var(--shu);padding:7px 15px;line-height:1;margin-bottom:20px}
+.coupon h3{font-family:var(--f-mc);font-weight:900;font-size:clamp(21px,3.4vw,38px);line-height:1.45;letter-spacing:.01em}
+.coupon h3 b{color:var(--shu);font-weight:900}
+.coupon .lead{font-size:clamp(12.5px,1.6vw,14px);line-height:2.05;margin-top:18px;color:rgba(255,255,255,.78)}
+.sec--light .coupon .lead{color:#333}
+.coupon .notes{margin:16px 0 0;max-width:none}
+/* ボタンのラベルが長いので、この帯の中だけ折り返しを許可する */
+.coupon .btn{white-space:normal;text-align:center;line-height:1.5;max-width:100%}
+@media (max-width:900px){
+  .coupon{grid-template-columns:1fr;text-align:left}
+  .coupon > div:last-child{justify-self:stretch}
+  .coupon .btn{width:100%}
+}
 
 /* ============================================================
    WORKS
