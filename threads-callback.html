@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Threads連携｜出張洗車LUXERE</title>
+<link rel="icon" href="/assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yuji+Boku&family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#141210; --paper:#efe9df; --white:#fff; --grey:#8b8378; --shu:#b7282e;
+    --f-jp:"Noto Sans JP",-apple-system,"Hiragino Kaku Gothic ProN",sans-serif;
+    --f-mc:"Noto Serif JP","Hiragino Mincho ProN",serif;
+    --f-fude:"Yuji Boku","Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; min-height:100vh; color:var(--ink);
+    font-family:var(--f-jp); line-height:1.9;
+    background:var(--paper);
+    /* 和紙の繊維感 */
+    background-image:
+      radial-gradient(rgba(120,105,85,.055) 1px, transparent 1px),
+      radial-gradient(rgba(120,105,85,.04) 1px, transparent 1px),
+      linear-gradient(180deg,#f3ede3,#e7e0d3);
+    background-size:13px 13px, 29px 29px, 100% 100%;
+    background-position:0 0, 7px 11px, 0 0;
+    display:flex; align-items:center; justify-content:center; padding:28px 18px;
+  }
+  .card{
+    width:100%; max-width:600px; background:rgba(255,255,255,.62);
+    border:1px solid rgba(20,18,16,.14); padding:clamp(26px,5vw,44px);
+    box-shadow:0 1px 0 rgba(255,255,255,.7) inset, 0 18px 44px rgba(60,50,35,.10);
+    position:relative;
+  }
+  .card::after{
+    content:""; position:absolute; inset:9px; border:1px solid rgba(20,18,16,.10); pointer-events:none;
+  }
+  .brand{font-family:var(--f-en,var(--f-mc)); letter-spacing:.42em; font-size:11px; color:var(--grey); text-transform:uppercase}
+  h1{font-family:var(--f-fude); font-size:clamp(25px,5.4vw,34px); font-weight:400; letter-spacing:.1em; margin:.5rem 0 .2rem}
+  .rule{width:52px; height:1px; background:var(--shu); margin:16px 0 22px}
+  p{margin:0 0 1rem; font-size:14.5px}
+  .lead{font-family:var(--f-mc)}
+  .codebox{
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    font-size:13px; line-height:1.75; word-break:break-all;
+    background:#fbf9f5; border:1px solid rgba(20,18,16,.16);
+    padding:15px 16px; margin:6px 0 14px; max-height:190px; overflow:auto;
+  }
+  button{
+    font-family:var(--f-jp); font-size:14px; letter-spacing:.08em;
+    background:var(--ink); color:#fff; border:0; padding:13px 26px; cursor:pointer;
+    transition:opacity .2s;
+  }
+  button:hover{opacity:.82}
+  button.done{background:var(--shu)}
+  ol{padding-left:1.2em; margin:.4rem 0 0; font-size:13.5px; color:#4a443c}
+  ol li{margin-bottom:.35rem}
+  .err{color:var(--shu); font-family:var(--f-mc)}
+  .seal{
+    position:absolute; right:clamp(18px,4vw,30px); top:clamp(18px,4vw,30px);
+    width:52px; height:52px; border:2px solid var(--shu); color:var(--shu);
+    font-family:var(--f-fude); font-size:11px; line-height:1.15; letter-spacing:.02em;
+    display:flex; align-items:center; justify-content:center; text-align:center;
+    transform:rotate(-6deg); opacity:.78; border-radius:3px;
+  }
+  footer{margin-top:26px; padding-top:16px; border-top:1px solid rgba(20,18,16,.12);
+         font-size:11.5px; color:var(--grey); letter-spacing:.06em}
+</style>
+</head>
+<body>
+  <main class="card">
+    <div class="seal">出張<br>洗車</div>
+    <div class="brand">LUXERE</div>
+    <h1 id="title">連携用コード</h1>
+    <div class="rule"></div>
+    <div id="body">
+      <p class="lead">読み込んでいます…</p>
+    </div>
+    <footer>このページは社内システム用です。出張洗車LUXERE ／ luxere.jp</footer>
+  </main>
+
+<script>
+(function () {
+  var p = new URLSearchParams(location.search);
+  var code = p.get('code');
+  var err  = p.get('error_description') || p.get('error');
+  var body = document.getElementById('body');
+  var title = document.getElementById('title');
+
+  if (err) {
+    title.textContent = '連携できませんでした';
+    body.innerHTML = '<p class="err">' + escapeHtml(err) + '</p>'
+      + '<p>スプレッドシートのメニュー「③ 認可URLを表示」からやり直してください。</p>';
+    return;
+  }
+
+  if (!code) {
+    title.textContent = 'コードがありません';
+    body.innerHTML = '<p>このページは Threads の連携時に自動で開かれます。</p>'
+      + '<p>スプレッドシートのメニュー「③ 認可URLを表示」から始めてください。</p>';
+    return;
+  }
+
+  // Metaが末尾に付ける「#_」を除去
+  code = code.replace(/#_$/, '');
+
+  body.innerHTML =
+    '<p class="lead">下のコードをコピーして、スプレッドシートに貼り付けてください。</p>'
+    + '<div class="codebox" id="code">' + escapeHtml(code) + '</div>'
+    + '<button id="copy">コードをコピー</button>'
+    + '<ol>'
+    +   '<li>スプレッドシートに戻る</li>'
+    +   '<li>メニュー「Threads投稿」→「④ 認可コードを貼り付けて連携完了」</li>'
+    +   '<li>貼り付けて OK</li>'
+    + '</ol>';
+
+  document.getElementById('copy').addEventListener('click', function () {
+    var btn = this;
+    copyText(code, function (ok) {
+      btn.textContent = ok ? 'コピーしました' : 'コピーできません（手動で選択してください）';
+      btn.className = ok ? 'done' : '';
+      setTimeout(function () { btn.textContent = 'コードをコピー'; btn.className = ''; }, 2600);
+    });
+  });
+
+  function copyText(t, cb) {
+    if (navigator.clipboard && location.protocol === 'https:') {
+      navigator.clipboard.writeText(t).then(function () { cb(true); }, function () { cb(fallback(t)); });
+    } else { cb(fallback(t)); }
+  }
+  function fallback(t) {
+    try {
+      var ta = document.createElement('textarea');
+      ta.value = t; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      var ok = document.execCommand('copy');
+      document.body.removeChild(ta);
+      return ok;
+    } catch (e) { return false; }
+  }
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c];
+    });
+  }
+})();
+</script>
+</body>
+</html>
